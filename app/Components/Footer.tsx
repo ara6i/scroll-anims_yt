@@ -59,7 +59,7 @@ function Footer() {
         </div>
       </nav>
       <p className="rights">
-        <a href="">©2023 The Code Dealer. All rights reserved.</a>
+        <a href="">©2023 ARASH. All rights reserved.</a>
         <a href="">Privacy policy | Terms of service</a>
       </p>
     </FooterStyled>

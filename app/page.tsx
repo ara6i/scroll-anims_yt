@@ -11,7 +11,8 @@ import Footer from "./Components/Footer";
 import ZoomSection from "./Components/ZoomSection";
 import HorizontalWrapper from "./Components/HorizontalWrapper";
 import { motion, useScroll, useTransform } from "framer-motion";
-
+import Loading from "./loading";
+import { useEffect, useState } from "react";
 export default function Home() {
   const video = React.useRef<HTMLDivElement>(null);
 
@@ -26,7 +27,18 @@ export default function Home() {
     [0, 0.6, 0.8, 0.9],
     [1, 0.8, 0.8, 0]
   );
+  const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    // Simulate a delay to demonstrate the loading state
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 300); // Adjust the delay time as needed
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
   return (
     <>
       <Header />
@@ -81,7 +93,7 @@ export default function Home() {
             }}
           >
             <iframe
-              src="https://www.youtube.com/embed/OuaUjkZhfqQ"
+              src="https://www.youtube.com/embed/EJzB_Fa27ko"
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
